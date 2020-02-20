@@ -50,12 +50,12 @@ class MeanMedMode<N extends Number> {
         return median;
     }
 
-    public static <N extends Number> BigDecimal mode(Collection<N> list, int precision) {
+    public static <N extends Number> BigDecimal mode(Collection<N> list, double threshold) {
         ArrayList<BigDecimal> bigList = new ArrayList<>();
         for (N n : list) {
-            bigList.add(new BigDecimal(n.toString()).setScale(precision));
+            bigList.add(new BigDecimal(n.toString()));
         }
-        HashMap<BigDecimal, Integer> freqMap = new HashMap<>();
+        Collections.sort(bigList);
         return bigList.get(0);
     }
 
