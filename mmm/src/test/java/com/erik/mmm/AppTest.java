@@ -37,8 +37,8 @@ public class AppTest {
         input.add(1.0);
         input.add(2.0);
         input.add(7.0);
-        double mean = MeanMedMode.mean(input);
-        assertEquals(mean, 10.0/3.0, 0.0f);
+        BigDecimal mean = MeanMedMode.bigMean(input, 4);
+        assertEquals(mean.compareTo(BigDecimal.valueOf(3.3333)), 0);
     }
 
     @Test
@@ -68,11 +68,18 @@ public class AppTest {
     }
 
     @Test
+    void bigMeanInt() {
+        ArrayList<Integer> input = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9,10));
+        BigDecimal mean = MeanMedMode.bigMean(input, 2);
+        assertEquals(mean.compareTo(BigDecimal.valueOf(5.5)), 0);
+    }
+
+    @Test
     void bigMedian() {
         ArrayList<Double> input = new ArrayList<>(Arrays.asList(6.473343575064627, 25.074808132784444, 46.56863481297735, 
                                                                 42.15683212179127, 38.66108248577888, 83.03051130301404, 13.476309649766883, 
                                                                 54.80119585316232, 87.91815314181547, 71.15110877901036));
-        double median = MeanMedMode.median(input);
-        assertEquals(median, 44.36273346738431, 0.0f);
+        BigDecimal median = MeanMedMode.bigMedian(input);
+        assertEquals(median.compareTo(BigDecimal.valueOf(44.36273346738431)), 0);
     }
 }

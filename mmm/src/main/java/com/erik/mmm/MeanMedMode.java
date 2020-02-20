@@ -9,17 +9,18 @@ import java.util.Comparator;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
+import java.util.HashMap;
 
 class MeanMedMode<N extends Number> {
 
-    public static <N extends Number> BigDecimal bigMean(Collection<N> list, int points) {
+    public static <N extends Number> BigDecimal bigMean(Collection<N> list, int precision) {
         ArrayList<BigDecimal> bigList = new ArrayList<>();
         for (N n : list) {
             bigList.add(new BigDecimal(n.toString()));
         }
         BigDecimal total = bigList.stream().reduce(BigDecimal.ZERO, (a, b) -> a.add(b));
-        BigDecimal mean = total.divide(BigDecimal.valueOf(bigList.size()));
-        return mean.setScale(points, RoundingMode.HALF_UP);
+        BigDecimal mean = total.divide(BigDecimal.valueOf(bigList.size()), precision, RoundingMode.HALF_UP);
+        return mean;
     }
 
     public static <N extends Number> double mean(Collection<N> list) {
@@ -48,5 +49,42 @@ class MeanMedMode<N extends Number> {
         }
         return median;
     }
+
+    public static <N extends Number> BigDecimal mode(Collection<N> list, int precision) {
+        ArrayList<BigDecimal> bigList = new ArrayList<>();
+        for (N n : list) {
+            bigList.add(new BigDecimal(n.toString()).setScale(precision));
+        }
+        HashMap<BigDecimal, Integer> freqMap = new HashMap<>();
+        return bigList.get(0);
+    }
+
+    public static <N extends Number> BigDecimal bigMedian(Collection<N> list) {
+        ArrayList<BigDecimal> bigList = new ArrayList<>();
+        for (N n : list) {
+            bigList.add(new BigDecimal(n.toString()));
+        }
+        if (bigList.size() < 2) {
+            return bigList.get(0);
+        }
+        int middle = bigList.size()/2;
+        
+         
+        Collections.sort(bigList);
+        BigDecimal median;
+        if (bigList.size() % 2 == 0) {
+            median = (bigList.get(middle)
+                        .add(bigList.get(middle-1)))
+                        .divide(BigDecimal.valueOf(2.0));
+        } else {
+            median = bigList.get(middle);
+
+        }
+
+        return median;
+
+    }
+
+    
 
 }

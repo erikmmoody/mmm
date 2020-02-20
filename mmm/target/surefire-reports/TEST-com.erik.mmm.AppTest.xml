@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.erik.mmm.AppTest" time="0.221" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.erik.mmm.AppTest" time="0.098" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
     <property name="java.specification.version" value="11"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/home/gitpod/.sdkman/candidates/java/11.0.5.fx-zulu/lib"/>
-    <property name="sun.java.command" value="/workspace/mmm/mmm/target/surefire/surefirebooter18288218498750891817.jar /workspace/mmm/mmm/target/surefire 2020-02-20T22-38-54_495-jvmRun1 surefire51154948800592062tmp surefire_011141289250285625396tmp"/>
+    <property name="sun.java.command" value="/workspace/mmm/mmm/target/surefire/surefirebooter1602380165339526294.jar /workspace/mmm/mmm/target/surefire 2020-02-20T23-19-09_786-jvmRun1 surefire2400635589249469901tmp surefire_010230960742903836163tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/workspace/mmm/mmm/target/test-classes:/workspace/mmm/mmm/target/classes:/workspace/m2-repository/junit/junit/3.8.1/junit-3.8.1.jar:/workspace/m2-repository/org/junit/jupiter/junit-jupiter-api/5.4.2/junit-jupiter-api-5.4.2.jar:/workspace/m2-repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/workspace/m2-repository/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar:/workspace/m2-repository/org/junit/platform/junit-platform-commons/1.4.2/junit-platform-commons-1.4.2.jar:/workspace/m2-repository/org/junit/jupiter/junit-jupiter-engine/5.4.2/junit-jupiter-engine-5.4.2.jar:/workspace/m2-repository/org/junit/platform/junit-platform-engine/1.4.2/junit-platform-engine-1.4.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/workspace/mmm/mmm/target/surefire/surefirebooter18288218498750891817.jar"/>
+    <property name="surefire.real.class.path" value="/workspace/mmm/mmm/target/surefire/surefirebooter1602380165339526294.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.5+10-LTS"/>
     <property name="user.name" value="gitpod"/>
@@ -57,11 +57,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="arrayList" classname="com.erik.mmm.AppTest" time="0.133"/>
-  <testcase name="median" classname="com.erik.mmm.AppTest" time="0.011"/>
-  <testcase name="bigMean" classname="com.erik.mmm.AppTest" time="0.009"/>
-  <testcase name="bigMedian" classname="com.erik.mmm.AppTest" time="0.001"/>
-  <testcase name="linkedList" classname="com.erik.mmm.AppTest" time="0.002"/>
-  <testcase name="medianEven" classname="com.erik.mmm.AppTest" time="0.001"/>
-  <testcase name="floating" classname="com.erik.mmm.AppTest" time="0.001"/>
+  <testcase name="arrayList" classname="com.erik.mmm.AppTest" time="0.001"/>
+  <testcase name="bigMeanInt" classname="com.erik.mmm.AppTest" time="0.005"/>
+  <testcase name="median" classname="com.erik.mmm.AppTest" time="0.002"/>
+  <testcase name="bigMean" classname="com.erik.mmm.AppTest" time="0.018"/>
+  <testcase name="bigMedian" classname="com.erik.mmm.AppTest" time="0.008"/>
+  <testcase name="linkedList" classname="com.erik.mmm.AppTest" time="0.006"/>
+  <testcase name="medianEven" classname="com.erik.mmm.AppTest" time="0.002"/>
+  <testcase name="floating" classname="com.erik.mmm.AppTest" time="0.002"/>
 </testsuite>
