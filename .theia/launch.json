@@ -4,10 +4,17 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "java",
-      "name": "Debug (Launch) - Current File",
-      "request": "launch",
-      "mainClass": "${file}"
+        "type": "java",
+        "name": "CodeLens (Launch) - MeanMedianMode",
+        "request": "launch",
+        "mainClass": "com.erik.mmm.MeanMedianMode",
+        "projectName": "mmm"
+    },
+    {
+        "type": "java",
+        "name": "Debug (Launch) - Current File",
+        "request": "launch",
+        "mainClass": "${file}"
     }
-  ]
+]
 }
