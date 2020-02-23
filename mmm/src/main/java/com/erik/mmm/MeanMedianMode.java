@@ -1,11 +1,11 @@
 package com.erik.mmm;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class MeanMedianMode {
 
@@ -25,7 +25,7 @@ public class MeanMedianMode {
         }
     }
 
-    public static List<Integer> mode(List<Integer> list) {
+    public static ArrayList<Integer> mode(List<Integer> list) {
         Map<Integer, Integer> freqMap = new HashMap<>();
         for (int i : list) {
             if (freqMap.containsKey(i)) {
@@ -44,29 +44,16 @@ public class MeanMedianMode {
             }
         }
     
-        List<Integer> modes = new ArrayList<>();
+        ArrayList<Integer> modes = new ArrayList<>();
         for (Map.Entry<Integer, Integer> pair : freqMap.entrySet()) {
             if (pair.getValue() == max) {
                 modes.add(pair.getKey());
             }
         }
-        if (modes.size() == list.size()) {
+        List<Integer> uniqueList = list.stream().distinct().collect(Collectors.toList());
+        if (modes.size() == uniqueList.size()) {
             throw new IllegalArgumentException("Input list has no mode!");
         }
         return modes;
-    }
-
-    public static void main(String args[]) {
-        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1,3,6));
-        list.remove(1);
-        int mode;
-        try {
-            mode = mode(list).get(0);
-            System.out.println(mode);
-        } catch(IllegalArgumentException ex) {
-            System.out.println(ex.getMessage());
-        }
-        System.out.println(median(list));
-        System.out.println(mean(list));
     }
 }
