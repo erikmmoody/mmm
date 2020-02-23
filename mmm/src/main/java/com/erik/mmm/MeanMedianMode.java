@@ -24,8 +24,14 @@ public class MeanMedianMode {
             return (double) list.get(middle);
         }
     }
-
-    public static ArrayList<Integer> mode(List<Integer> list) {
+    /*
+    I found conflicting information as to whether the mode is defined on a list in which
+    all entries appear equally frequently. Some resources claim that mode is defined on
+    any finite list, while others claim that if all numbers appear equally often in a list, that
+    list has no mode. Since it would be pretty pathological for a list to have no mode,
+    I chose to throw an exception in this case.
+    */
+    public static ArrayList<Integer> mode(List<Integer> list) throws IllegalArgumentException {
         Map<Integer, Integer> freqMap = new HashMap<>();
         for (int i : list) {
             if (freqMap.containsKey(i)) {
